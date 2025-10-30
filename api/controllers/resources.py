@@ -24,6 +24,7 @@ def update(db: Session, resource_id, resource):
     db_resource.update(update_data, synchronize_session=False)
     db.commit()
     return db_resource.first()
+
 def delete(db:Session, resource_id):
     db_resource = db.query(models.Resource).filter(models.Resource.id == resource_id)
     db_resource.delete(synchronize_session=False)

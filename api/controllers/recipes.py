@@ -13,11 +13,11 @@ def create (db: Session, recipe):
     db.refresh(db_recipe)
     return db_recipe
 
-def read_all(db:Session):
+def read_all(db: Session):
     return db.query(models.Recipe).all()
 
-def read_one(db:Session, id:int):
-    return db.query(models.Recipe).filter(models.Recipe.id == id).first()
+def read_one(db:Session, recipe_id):
+    return db.query(models.Recipe).filter(models.Recipe.id == recipe_id).first()
 
 def update(db:Session, recipe_id, recipe):
     db_recipe = db.query(models.Recipe).filter(models.Recipe.id == recipe_id)
